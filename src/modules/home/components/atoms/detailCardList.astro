@@ -4,8 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/globals/components/u
 const {title} = Astro.props;
 ---
 
-<Card className="shadow-xl">
-    <CardHeader className="gap-0 flex justify-between flex-col min-h-20">
+<Card className="shadow-xl flex justify-between">
+    <CardHeader className="min-h-20">
         <CardTitle className="text-2xl font-normal pb-0">{title}</CardTitle>
     </CardHeader>
     <CardContent>

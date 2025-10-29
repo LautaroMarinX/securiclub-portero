@@ -9,7 +9,6 @@ const PhoneField = () => {
   const [touched, setTouched] = React.useState(false);
   const formInfo = useStore($formInfo);
 
-  // ✅ Usar useMemo para validación con función existente
   const validation = useMemo(() => {
     const phone = formInfo?.phone;
     const isValid = phone ? isValidPhone(phone) : false;

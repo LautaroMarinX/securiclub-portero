@@ -1,13 +1,18 @@
+import { useHeader } from "@/globals/hooks/useHeader";
 import RequestDemo from "../atoms/RequestDemo";
 import DesktopHeaderLinks from "../molecules/DesktopHeaderLinks";
 import MobileHeaderLinks from "../molecules/MobileHeaderLinks";
 
 
 export const Header = () => {
-  return (
-    <header className="fixed top-0 w-screen bg-secondary z-50 shadow">
-      <div className="container mx-auto flex justify-between items-center lg:grid lg:grid-cols-3">
 
+  const { useIsAtTop } =  useHeader();
+
+  return (
+    <header
+      className={`fixed top-0 duration-300 transition-all w-screen ${useIsAtTop() ? "bg-transparent" : "bg-primary/5 backdrop-blur-xl shadow-2xl"} z-50`}
+    >
+      <div className="container mx-auto flex justify-between items-center lg:grid lg:grid-cols-3">
         {/* Logo */}
         <a className="flex items-center" href="/#top">
           <img src="/logo.png" className="size-12" alt="Logo de Securi Club" />

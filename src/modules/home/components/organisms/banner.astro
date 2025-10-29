@@ -3,29 +3,34 @@ import { Badge } from "@/globals/components/ui/badge";
 import { Button } from "@/globals/components/ui/button";
 import CheckItem from "@/globals/components/atoms/CheckItem.astro";
 import RequestDemo from "@/globals/components/atoms/RequestDemo";
-
+import Image from "astro/components/Image.astro";
 ---
 
-<section class="h-fit py-16 pt-30 flex justify-center items-center bg-linear-to-b from-teal-300/20 to-secondary" id="top">
-    <div class="grid grid-cols-1 lg:grid-cols-2 container mx-auto gap-4 lg:gap-8">
-        <div class="flex flex-col">
-            <Badge className="mb-1 bg-primary/10 text-primary">Portería Autónoma 24/7</Badge>
-                <h1 class="text-3xl lg:text-5xl mb-2 font-bold text-balance">Tu edificio inteligente, <span class=" bg-clip-text text-transparent bg-linear-to-br from-teal-300/20 via-primary to-black">seguro y conectado</span></h1>
-                <p class="mb-4 text-balance">Con Securi Club reducís costos, aumentás la seguridad y simplificás la vida de todos con acceso facial, invitaciones digitales y gestión desde una sola app.</p>
-                <div class="flex flex-wrap gap-2">
-                    <RequestDemo label="Quiero mi demo gratis" />
-                    <Button variant="outline" size={"lg"}>
+<section class="h-fit py-20 flex justify-center items-center bg-linear-to-b from-teal-300/20 to-secondary" id="top">
+    <div class="flex flex-col-reverse lg:flex-row gap-2 container mx-auto">
+        
+        <div class="flex flex-col justify-center">
+            <Badge className="mb-2 bg-primary/10 text-primary">Portería Autónoma 24/7</Badge>
+            <h1 class="text-3xl md:text-5xl xl:text-6xl mb-2 text-balance">Tu edificio inteligente, <span class=" bg-clip-text text-transparent bg-linear-to-br from-teal-300/20 via-primary to-black">seguro y conectado</span></h1>
+            <p class="mb-4 text-balance">Con Securi Club reducís costos, aumentás la seguridad y simplificás la vida de todos con acceso facial, invitaciones digitales y gestión desde una sola app.</p>
+            <div class="flex flex-wrap gap-2">
+                <RequestDemo label="Quiero mi demo gratis" />
+                    <a href="#como-funciona">
+                    <Button variant="outline" className="cursor-pointer" size={"lg"}>
                         Ver cómo funciona
                     </Button>
-                </div>
-                <ul class="mt-4 flex flex-col gap-1">
-                    <CheckItem>Ahorro de hasta 50% en costos de portería.</CheckItem>
-                    <CheckItem>Acceso facial, QR y videoportero remoto.</CheckItem>
-                    <CheckItem>Reservas, expensas y cámaras en una sola app.</CheckItem>
-                </ul>
+                    </a>
+            </div>
+            <ul class="mt-4 flex flex-col gap-1">
+                <CheckItem>Ahorro de hasta 50% en costos de portería.</CheckItem>
+                <CheckItem>Acceso facial, QR y videoportero remoto.</CheckItem>
+                <CheckItem>Reservas, expensas y cámaras en una sola app.</CheckItem>
+            </ul>       
         </div>
-        <div class="h-96 bg-white shadow rounded-2xl">
-            <!-- PLACEHOLDER -->
+
+        <div class="flex w-full h-fit items-center justify-center">
+            <Image src="/mockup.png" loading={"eager"} alt="Imagenes de dos telefonos celulares con la aplicación de Portería Autónoma" class="aspect-[4/3] object-contain" width={1920} height={1080} />
         </div>
-    </div>
+    
+    </div> 
 </section>

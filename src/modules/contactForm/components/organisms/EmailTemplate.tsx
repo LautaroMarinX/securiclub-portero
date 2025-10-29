@@ -1,4 +1,4 @@
-import {Container, Font, Head, Heading, Html, pixelBasedPreset, Row, Section, Tailwind, Text} from "@react-email/components";
+import {Container, Font, Head, Heading, Html, Img, pixelBasedPreset, Row, Section, Tailwind, Text} from "@react-email/components";
 import type { FormInfo } from "../../utils/FormInfoInterface";
 
 
@@ -47,11 +47,14 @@ const EmailTemplate = (props: FormInfo) => {
           />
         </Head>
         <Container>
+          <Img src="/logo.png" width={70} height={70} />
+        </Container>
+        <Container>
           <Heading as="h1" mb={0}>
             Gracias por solicitar tu Demo
           </Heading>
           <Text>
-            Estimado/a ${name}, hemos recibido correctamente tu solicitud de
+            Estimado/a {name}, hemos recibido correctamente tu solicitud de
             demo. Nuestro equipo se pondrá en contacto con usted en las próximas
             24 horas hábiles utilizando los datos de contacto que nos ha
             proporcionado.

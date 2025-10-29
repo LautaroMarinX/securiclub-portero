@@ -13,8 +13,9 @@ export const POST: APIRoute = async ({ request }) => {
   const { email, message, name, phone, rol, units } = body;
 
   const { data, error } = await resend.emails.send({
-    from: "Demo <contacto@securiclub.com>",
-    to: [`${email}`],
+    from: `Demo <${import.meta.env.RESEND_EMAIL_FROM}>`,
+    to: ['delivered@resend.dev'],
+    // to: [`${email}`],
     subject: `Gracias por solicitar tu demo | Securi Club`,
     react: EmailTemplate({
       name: `${name}`,

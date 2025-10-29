@@ -9,7 +9,6 @@ const EmailField = () => {
   const [touched, setTouched] = React.useState(false);
   const formInfo = useStore($formInfo);
 
-  // ✅ Usar useMemo para validación con función existente
   const validation = useMemo(() => {
     const email = formInfo?.email;
     const isValid = email ? isValidEmail(email) : false;

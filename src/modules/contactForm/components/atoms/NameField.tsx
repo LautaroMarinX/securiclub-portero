@@ -9,7 +9,6 @@ const NameField = () => {
   const [touched, setTouched] = React.useState(false);
   const formInfo = useStore($formInfo);
 
-  // ✅ Usar useMemo para validación con función existente
   const validation = useMemo(() => {
     const name = formInfo?.name;
     const isValid = name ? isValidName(name.trim()) : false;

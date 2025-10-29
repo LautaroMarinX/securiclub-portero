@@ -9,7 +9,6 @@ const UnitsField = () => {
   const [touched, setTouched] = React.useState(false);
   const formInfo = useStore($formInfo);
 
-  // ✅ Usar useMemo para validación con función existente
   const validation = useMemo(() => {
     const units = formInfo?.units;
     const isValid = units ? isValidUnits(units) : false;

@@ -9,7 +9,6 @@ const StatusField = () => {
   const [touched, setTouched] = React.useState(false);
   const formInfo = useStore($formInfo);
 
-  // ✅ Usar useMemo para validación con función existente
   const validation = useMemo(() => {
     const rol = formInfo?.rol;
     const isValid = rol ? isValidRol(rol) : false;
@@ -20,9 +19,9 @@ const StatusField = () => {
 
   return (
     <Field data-invalid={validation.shouldShowError}>
-      <FieldLabel>Rol personal *</FieldLabel>
-      <Select 
-        required 
+      <FieldLabel htmlFor="rol">Rol personal *</FieldLabel>
+      <Select
+        required
         value={formInfo?.rol || ""}
         onValueChange={(value) => {
           setFormField("rol", value);
@@ -33,18 +32,20 @@ const StatusField = () => {
           <SelectValue placeholder="Elija una opción" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="Administrador">Administrador de Consorcio</SelectItem>
+          <SelectItem value="Administrador">
+            Administrador de Consorcio
+          </SelectItem>
           <SelectItem value="Desarrollador">
             Desarrollador inmobiliario
           </SelectItem>
           <SelectItem value="Propietario">Propietario o Residente</SelectItem>
-          <SelectItem value="Instalador">Instalador o Empresa de Seguridad</SelectItem>
+          <SelectItem value="Instalador">
+            Instalador o Empresa de Seguridad
+          </SelectItem>
         </SelectContent>
       </Select>
       {validation.shouldShowError && (
-        <FieldError>
-          Por favor, selecciona tu rol personal.
-        </FieldError>
+        <FieldError>Por favor, selecciona tu rol personal.</FieldError>
       )}
     </Field>
   );

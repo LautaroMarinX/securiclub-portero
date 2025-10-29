@@ -1,17 +1,24 @@
 ---
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 ---
 
-<section class="bg-secondary">
+<section class="bg-secondary p-4">
 
-    <div class="flex flex-col container mx-auto">
-        <div class="flex flex-col">
-            <h2 class="text-3xl">Mirá la demo</h2>
-            <p>Acceso facial, QR para invitados, paquetería segura y reservas en segundos.</p>
+    <div class="flex flex-col container mx-auto p-8! bg-white rounded-2xl">
+        <div class="flex flex-col mb-4">
+            <h2 class="text-2xl lg:text-4xl mb-2">Acceso Total al Instante</h2>
+            <p class="lg:w-2/4">Mira la demo y descubre cómo gestionar el acceso facial, códigos QR para invitados, la recepción de paquetes seguros y las reservas, todo desde tu móvil y en segundos.</p>
         </div>
         
-        <div class="shadow-2xl rounded-2xl bg-secondary h-[70vh] mt-4">
-        <!-- PLACEHOLDER -->
-         </div>
+         <LiteYouTubeEmbed
+         client:load
+         activatedClass='lyt-activated'
+         wrapperClass='yt-lite rounded-xl'
+         aspectHeight={8}
+         title='Descubre FullCond: La Solución Integral para la Gestión de Condominios'
+        id="1Hhs6TqKLxc"
+        />
     </div>
     
 
