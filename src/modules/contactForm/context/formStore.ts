@@ -29,5 +29,14 @@ export function setFormField<K extends keyof FormInfo>(
     [field]: value,
   });
 
+}
 
+export function isFormValid(): boolean {
+  const info = $formInfo.get();
+
+  if (!info) return false;
+  
+  const { name, email, phone, rol, units, message } = info;
+
+  return ( name.length > 2 && email.length > 2 && phone > 5 && rol != '' && units >= 0 && message ) ? true : false;
 }

@@ -1,6 +1,5 @@
 import { Field, FieldLabel } from '@/globals/components/ui/field';
 import { Textarea } from '@/globals/components/ui/textarea';
-import React from 'react'
 
 const MessageField = () => {
   return (

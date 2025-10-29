@@ -1,5 +1,5 @@
 import {Container, Font, Head, Heading, Html, pixelBasedPreset, Row, Section, Tailwind, Text} from "@react-email/components";
-import type { FormInfo } from "../utils/FormInfoInterface";
+import type { FormInfo } from "../../utils/FormInfoInterface";
 
 
 const EmailInfoDetail = ({heading, value}: {heading: string, value: any}) => {
