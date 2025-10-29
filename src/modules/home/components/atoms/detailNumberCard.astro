@@ -1,0 +1,16 @@
+---
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/globals/components/ui/card";
+
+const {icon: Icon, title, description} = Astro.props
+
+---
+
+<Card className="shadow-xl">
+    <CardHeader className="gap-0 h-20 flex justify-between flex-col">
+        <Icon  class="size-10 stroke-1"/>
+    </CardHeader>
+    <CardFooter className="flex flex-col items-start">
+            <CardTitle className="text-2xl font-normal pb-0">{title}</CardTitle>
+            <CardDescription className="text-md">{description}</CardDescription>
+    </CardFooter>
+</Card>

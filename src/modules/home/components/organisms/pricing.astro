@@ -1,0 +1,44 @@
+---
+import CheckItem from "@/globals/components/atoms/CheckItem.astro";
+import PricingCard from "../atoms/pricingCard.astro";
+
+---
+
+<section class="bg-linear-to-b from-secondary via-teal-300/20 to-secondary py-16" id="planes">
+    <div class="flex flex-col container mx-auto">
+
+        <div class="flex flex-col">
+            <h3 class="text-3xl mb-1">Planes y Precios</h3>
+            <p>Elegí el plan que mejor se adapta a tu edificio</p>
+            <small class="text-black/50">Valores orientativos, pueden variar según hardware y cantidad de unidades.</small>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
+            <PricingCard title="Piloto" pricing="15000">
+                <ul class="flex flex-col gap-1">
+                    <CheckItem>Acceso facial + QR</CheckItem>
+                    <CheckItem>1 equipo de acceso</CheckItem>
+                    <CheckItem>App residentes + invitaciones</CheckItem>
+                    <CheckItem>Soporte estándar</CheckItem>
+                </ul>
+            </PricingCard>
+            <PricingCard title="Estandar" recomendado pricing="15000">
+                <ul class="flex flex-col gap-1">
+                    <CheckItem>Todo lo del plan Piloto</CheckItem>
+                    <CheckItem>Videoportero remoto</CheckItem>
+                    <CheckItem>Reservas de amenities</CheckItem>
+                    <CheckItem>Comunicados y expensas</CheckItem>
+                </ul>
+            </PricingCard>
+            <PricingCard title="Premium" pricing="15000" >
+                <ul class="flex flex-col gap-1">
+                    <CheckItem>Integración cámaras + portón</CheckItem>
+                    <CheckItem>Automatización de puertas</CheckItem>
+                    <CheckItem>Reportes avanzados</CheckItem>
+                    <CheckItem>Soporte prioritario 24/7</CheckItem>
+                </ul>
+            </PricingCard>
+        </div>
+     
+    </div>
+</section>

@@ -1,0 +1,27 @@
+---
+import Footer from "@/globals/components/organisms/footer.astro";
+import Header from "@/globals/components/organisms/Header";
+import "@fontsource-variable/inter"
+import "@/styles/global.css";
+---
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Securi Club | Portería Autónoma</title>
+	</head>
+	<Header client:load />
+	<body>
+		<slot />
+	</body>
+	<Footer />
+</html>
+
+<style>
+	*{
+		font-family: 'Inter Variable', sans-serif;
+	}
+</style>

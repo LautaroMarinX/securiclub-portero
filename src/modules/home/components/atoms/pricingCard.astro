@@ -1,0 +1,27 @@
+---
+import { Badge } from "@/globals/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/globals/components/ui/card";
+
+
+const {title, pricing, recomendado} = Astro.props;
+
+---
+
+<Card className="bg-card">
+    <CardHeader className="flex flex-col gap-0">
+      
+        <CardTitle className="text-2xl font-normal flex justify-between items-center w-full">
+            {title}
+              {
+            recomendado && (
+            <Badge>Recomendado</Badge>
+
+            )
+        }
+        </Cardtitle>
+        <h3 class="text-3xl text-primary">${pricing} <span class="text-sm text-black!">/ mes</span></h3>
+    </CardHeader>
+    <CardContent>
+        <slot />
+    </CardContent>
+</Card>

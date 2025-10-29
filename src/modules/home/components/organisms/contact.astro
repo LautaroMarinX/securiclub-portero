@@ -1,0 +1,25 @@
+---
+import { Button } from "@/globals/components/ui/button";
+import ContactForm from "@/modules/contactForm/components/organisms/ContactForm";
+
+---
+
+<section class="bg-secondary py-20" id="contacto">
+
+    <div class="container mx-auto flex flex-col gap-4 justify-center items-center">
+       
+        <div class="flex flex-col text-center items-center">
+        <h3 class="text-3xl mb-1">Solicitá tu demo</h3>
+        <p class="mb-2">Completá el formulario y un asesor te contactará. También podés escribirnos por WhatsApp.</p>
+        <Button size={"lg"} variant={"outline"} className="w-fit">Hablar por WhatsApp</Button>
+        </div>
+
+        <div class="flex flex-col">
+            <ContactForm client:load />
+            <p class="mt-2 text-sm text-center">Al enviar este formulario aceptás ser contactado por Securi Club. No compartimos tus datos con terceros.</p>
+        </div>
+        
+    </div>
+
+
+</section>
