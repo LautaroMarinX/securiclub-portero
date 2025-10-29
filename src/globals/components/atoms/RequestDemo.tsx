@@ -7,7 +7,7 @@ interface RequestDemoProps {
 const RequestDemo = ({ label }: RequestDemoProps) => {
   return (
     <a href="/#contacto">
-      <Button className="w-fit cursor-pointer">{label ? label : "Solicitar demo"}</Button>
+      <Button size={'lg'} className="w-fit cursor-pointer">{label ? label : "Solicitar demo"}</Button>
     </a>
   );
 };

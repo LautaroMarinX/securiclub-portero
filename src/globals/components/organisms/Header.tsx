@@ -10,7 +10,7 @@ export const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 duration-300 transition-all w-screen ${useIsAtTop() ? "bg-transparent" : "bg-primary/5 backdrop-blur-xl shadow-2xl"} z-50`}
+      className={`fixed top-0 duration-300 transition-all w-screen ${useIsAtTop() ? "bg-transparent" : "bg-primary/5 backdrop-blur-xl shadow"} z-50`}
     >
       <div className="container mx-auto flex justify-between items-center lg:grid lg:grid-cols-3">
         {/* Logo */}

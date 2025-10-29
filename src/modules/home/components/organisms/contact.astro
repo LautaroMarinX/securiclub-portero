@@ -12,7 +12,7 @@ const mensaje = "¡Hola! Me comunico desde su sitio web. Deseo solicitar una dem
        
         <div class="flex flex-col text-center items-center mb-4">
             <h3 class="text-2xl lg:text-4xl mb-2">Solicitá tu demo</h3>
-            <p class="mb-2">Completá el formulario y un asesor te contactará. También podés escribirnos por WhatsApp.</p>
+            <p class="mb-2 text-muted-foreground">Completá el formulario y un asesor te contactará. También podés escribirnos por WhatsApp.</p>
             <a href={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}?text=${decodeURIComponent(mensaje)}`} target="_blank" rel="noopener noreferrer">
             <Button size={"lg"}  className="w-fit cursor-pointer">Hablar por WhatsApp</Button>
             </a>
@@ -20,7 +20,7 @@ const mensaje = "¡Hola! Me comunico desde su sitio web. Deseo solicitar una dem
 
         <div class="flex flex-col">
             <ContactForm client:load />
-            <p class="mt-2 text-sm text-center">Al enviar este formulario aceptás ser contactado por Securi Club. No compartimos tus datos con terceros.</p>
+            <p class="mt-6 text-sm text-center">Al enviar este formulario aceptás ser contactado por Securi Club. No compartimos tus datos con terceros.</p>
         </div>
         
     </div>
