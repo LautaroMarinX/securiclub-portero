@@ -15,7 +15,7 @@ const HeaderLinkItem = ({link, closeMenu}: LinkItemProps) => {
           size={"default"}
           onClick={closeMenu}
           variant={"ghost"}
-          className="hover:bg-secondary lg:hover:bg-card justify-start w-full lg:w-fit cursor-pointer "
+          className="bg-secondary! lg:bg-transparent! hover:bg-secondary! lg:hover:bg-card justify-start w-full lg:w-fit cursor-pointer "
         >
           {link.label}
         </Button>

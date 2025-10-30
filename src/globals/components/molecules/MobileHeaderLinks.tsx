@@ -26,7 +26,7 @@ const Links = () => {
         <SheetContent>
           <SheetHeader>Menú</SheetHeader>
           <nav className="p-2 w-full">
-            <ul className="flex flex-col">
+            <ul className="flex flex-col gap-1">
               {links.map((link: linksProps) => (
                 <LinkItem closeMenu={closeMenu} key={link.label} link={link} />
               ))}
