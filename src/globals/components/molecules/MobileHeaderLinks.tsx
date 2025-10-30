@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 import { MenuIcon } from "lucide-react";
 import {useHeader} from "@/globals/hooks/useHeader";
 import LinkItem from "../atoms/HeaderLinkItem";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet";
 
 const Links = () => {
 
@@ -14,15 +14,14 @@ const Links = () => {
     <div className="lg:hidden">
       <Sheet open={isOpen} onOpenChange={handleOpen}>
         <SheetTitle className="hidden">Menu</SheetTitle>
-        <SheetTrigger className="lg:hidden">
-          <Button
-            size="icon"
-            variant={"outline"}
-            className="cursor-pointer rounded-md"
+        <SheetDescription className="hidden">Menu hamburguesa para mobile</SheetDescription>
+        <SheetTrigger className="lg:hidden" asChild>
+          <div
             onClick={handleOpen}
+            className="bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 size-10 flex items-center justify-center rounded-sm"
           >
-            <MenuIcon />
-          </Button>
+            <MenuIcon size={16} />
+          </div>
         </SheetTrigger>
         <SheetContent>
           <SheetHeader>Menú</SheetHeader>
