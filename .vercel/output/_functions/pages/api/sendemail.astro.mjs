@@ -89,73 +89,30 @@ const EmailTemplate = (props) => {
 };
 
 const prerender = false;
+const resend = new Resend("re_geRt1wSW_NFdyY6sbXkQqFmTQiVVFEfEy");
 const POST = async ({ request }) => {
-  try {
-    console.log("Iniciando proceso de envío de email...");
-    const apiKey = "re_geRt1wSW_NFdyY6sbXkQqFmTQiVVFEfEy";
-    const emailFrom = "contacto@securiclub.com.ar";
-    const replyTo = "rafael@securiclub.com.ar";
-    console.log("Variables de entorno:", {
-      hasApiKey: !!apiKey,
-      hasEmailFrom: !!emailFrom,
-      hasReplyTo: !!replyTo
+  const body = await request.json();
+  const { email, message, name, phone, rol, units } = body;
+  const { data, error } = await resend.emails.send({
+    from: `Contacto <${"contacto@securiclub.com.ar"}>`,
+    to: [`${email}`],
+    subject: `Gracias por solicitar tu demo | Securi Club`,
+    replyTo: `${"rafael@securiclub.com.ar"}`,
+    react: EmailTemplate({
+      name: `${name}`,
+      email: `${email}`,
+      phone,
+      rol: `${rol}`,
+      units,
+      message: `${message}`
+    })
+  });
+  if (error) {
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 500
     });
-    if (!apiKey) ;
-    if (!emailFrom) ;
-    const resend = new Resend(apiKey);
-    const body = await request.json();
-    console.log("Body recibido:", body);
-    const { email, message, name, phone, rol, units } = body;
-    if (!email || !name) {
-      console.error("Faltan campos requeridos");
-      return new Response(
-        JSON.stringify({ error: "Email y nombre son requeridos" }),
-        {
-          status: 400,
-          headers: { "Content-Type": "application/json" }
-        }
-      );
-    }
-    console.log("Enviando email...");
-    const { data, error } = await resend.emails.send({
-      from: `Contacto <${emailFrom}>`,
-      to: [`${email}`],
-      subject: `Gracias por solicitar tu demo | Securi Club`,
-      replyTo: replyTo || emailFrom,
-      react: EmailTemplate({
-        name: `${name}`,
-        email: `${email}`,
-        phone,
-        rol: `${rol}`,
-        units,
-        message: `${message}`
-      })
-    });
-    if (error) {
-      console.error("Error sending email:", error);
-      return new Response(JSON.stringify({ error: error.message }), {
-        status: 500,
-        headers: { "Content-Type": "application/json" }
-      });
-    }
-    console.log("Email enviado exitosamente:", data);
-    return new Response(JSON.stringify({ data }), {
-      status: 200,
-      headers: { "Content-Type": "application/json" }
-    });
-  } catch (error) {
-    console.error("Error general en sendEmail:", error);
-    return new Response(
-      JSON.stringify({
-        error: "Error interno del servidor",
-        details: error instanceof Error ? error.message : String(error)
-      }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" }
-      }
-    );
   }
+  return new Response(JSON.stringify({ data }), { status: 200 });
 };
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
