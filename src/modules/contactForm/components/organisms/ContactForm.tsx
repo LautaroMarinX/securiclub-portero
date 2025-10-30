@@ -41,7 +41,7 @@ const ContactForm = () => {
   if (sendStatus === "pendiente") {
     return (
       <form
-        className="p-4 shadow-2xl rounded-2xl bg-card"
+        className="p-4 rounded-2xl border-[1px]"
         onSubmit={handleSubmit}
       >
         <FieldGroup>
