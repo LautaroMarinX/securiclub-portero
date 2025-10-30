@@ -90,4 +90,5 @@ const EmailTemplate = (props: FormInfo) => {
   );
 }
 
-export default EmailTemplate
+export { EmailTemplate };
+export default EmailTemplate;
