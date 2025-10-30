@@ -47,7 +47,7 @@ const EmailTemplate = (props: FormInfo) => {
           />
         </Head>
         <Container>
-          <Img src="/logo.png" width={70} height={70} />
+          <Img src={`${import.meta.env.WEB_DOMAIN}/logo.png`} alt="Logo de Securi Club" width={70} height={70} />
         </Container>
         <Container>
           <Heading as="h1" mb={0}>

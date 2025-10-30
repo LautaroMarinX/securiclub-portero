@@ -13,10 +13,10 @@ export const POST: APIRoute = async ({ request }) => {
   const { email, message, name, phone, rol, units } = body;
 
   const { data, error } = await resend.emails.send({
-    from: `Demo <${import.meta.env.RESEND_EMAIL_FROM}>`,
-    to: ['delivered@resend.dev'],
-    // to: [`${email}`],
+    from: `Contacto <${import.meta.env.RESEND_EMAIL_FROM}>`,
+    to: [`${email}`],
     subject: `Gracias por solicitar tu demo | Securi Club`,
+    replyTo: `${import.meta.env.RESEND_EMAIL_REPLY_TO}`,
     react: EmailTemplate({
       name: `${name}`,
       email: `${email}`,
