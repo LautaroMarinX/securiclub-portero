@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 import { MenuIcon } from "lucide-react";
 import {useHeader} from "@/globals/hooks/useHeader";
 import LinkItem from "../atoms/HeaderLinkItem";
-import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "../ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet";
 
 const Links = () => {
 
@@ -13,6 +13,7 @@ const Links = () => {
   return (
     <div className="lg:hidden">
       <Sheet open={isOpen} onOpenChange={handleOpen}>
+        <SheetTitle className="hidden">Menu</SheetTitle>
         <SheetTrigger className="lg:hidden">
           <Button
             size="icon"

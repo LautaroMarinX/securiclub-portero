@@ -33,7 +33,6 @@ const ContactForm = () => {
     if (res.ok) {
       setSendStatus("enviado");
     } else {
-      console.log(res)
       setSendStatus("error");
     }
   };
