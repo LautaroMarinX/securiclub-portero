@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.4.0",
-    "@astrojs/vercel": "^9.0.0",
+    "@astrojs/vercel": "^8.0.4",
     "@fontsource-variable/inter": "^5.2.8",
     "@lucide/astro": "^0.548.0",
     "@nanostores/react": "^1.0.0",
@@ -23,6 +23,7 @@
     "@tailwindcss/vite": "^4.1.16",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
+    "@vercel/analytics": "^1.5.0",
     "aos": "^2.3.4",
     "astro": "^5.15.1",
     "class-variance-authority": "^0.7.1",
