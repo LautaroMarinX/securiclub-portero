@@ -14,8 +14,12 @@ export const Header = () => {
     >
       <div className="container mx-auto flex justify-between items-center lg:grid lg:grid-cols-3">
         {/* Logo */}
-        <a className="flex items-center" href="/#top">
-          <img src="/logo.png" className="size-12" alt="Logo de Securi Club" />
+        <a className="flex items-center w-fit " href="/#top">
+          <img
+            src="/logo.png"
+            className="size-12 hover:opacity-75 duration-300"
+            alt="Logo de Securi Club"
+          />
         </a>
 
         <DesktopHeaderLinks />
